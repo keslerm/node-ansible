@@ -157,6 +157,17 @@ describe('AdHoc command', function() {
     })
   })
 
+  describe('with vault id file', function() {
+    
+    it('should contain vault id file in execution', function(done) {
+      var command = new AdHoc().module('shell').hosts('local').args("echo 'hello'").vaultId("/vault.txt");
+      expect(command.exec()).to.be.fulfilled.then(function() {
+        expect(spawnSpy).to.be.calledWith('ansible', ['local', '-m', 'shell', '-a', 'echo \'hello\'', '--vault-id', '/vault.txt']);
+        done();
+      }).done();
+    })
+  })
+
   after(function() {
     process.spawn = oldSpawn;
     spawnSpy.restore();
