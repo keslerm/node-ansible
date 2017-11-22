@@ -1,4 +1,4 @@
-node-ansible [![Build Status](https://travis-ci.org/shaharke/node-ansible.png?branch=develop)](https://travis-ci.org/shaharke/node-ansible)
+ansible-wrapper
 ============
 
 Programmatic interface in Node.js for executing Ansible ad-hoc commands and playbooks
@@ -7,16 +7,15 @@ Programmatic interface in Node.js for executing Ansible ad-hoc commands and play
 
 ### Installation
 
-`npm install node-ansible --save`
+`npm install ansible-wrapper --save`
 
-**NOTE:** I think it goes without saying, but I'll mention it anyway - you MUST have ansible installed on the same machine
-on which your node process is going to run.
+**NOTE:** I think it goes without saying, but I'll mention it anyway - you MUST have ansible installed on the same machine on which your node process is going to run.
 
 
 ### Crash Course
 
 ```javascript
-var Ansible = require('node-ansible');
+var Ansible = require('ansible-wrapper');
 var command = new Ansible.AdHoc().module('shell').hosts('local').args("echo 'hello'");
 command.exec();
 ```
@@ -57,7 +56,7 @@ playbook.on('stderr', function(data) { console.log(data.toString()); });
 var promise = playbook.exec();
 ```
 
-[Full Documentation](http://shaharke.github.io/node-ansible)
+[Full Documentation](http://shaharke.github.io/ansible-wrapper)
 
 ### Running tests:
 
@@ -65,4 +64,4 @@ var promise = playbook.exec();
 
 ### License
 
-[MIT](https://github.com/shaharke/node-ansible/blob/master/LICENSE)
+[MIT](https://github.com/keslerm/ansible-wrapper/blob/master/LICENSE)
