@@ -290,6 +290,19 @@ describe('Playbook command', function () {
     })
   })
 
+  describe('with vault id file', function() {
+
+    it('should execute the playbook with specified vault id file', function (done) {
+      var command = new Playbook().playbook('test').vaultId("/vault.txt");
+      expect(command.exec()).to.be.fulfilled.then(function () {
+        expect(spawnSpy).to.be.calledWith('ansible-playbook' ,['test.yml', '--vault-id', '/vault.txt']);
+        done();
+      }).done();
+    })
+
+  })
+  
+
   after(function () {
     process.spawn = oldSpawn;
     spawnSpy.restore();
