@@ -21,15 +21,15 @@
     "url": "https://github.com/keslerm/node-ansible-wrapper/issues"
   },
   "devDependencies": {
-    "mocha": "~1.17.0",
     "chai": "~1.8.1",
-    "sinon": "~1.7.3",
     "chai-as-promised": "~4.1.0",
+    "mocha": "~1.17.0",
+    "sinon": "~1.7.3",
     "sinon-chai": "~2.4.0"
   },
   "dependencies": {
     "mock-spawn": "^0.2.6",
     "q": "~1.0.0",
-    "underscore": "~1.5.2"
+    "underscore": "~1.12.1"
   }
 }
